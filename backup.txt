@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+
+  <title>Tekken Battles - Jogos de Luta Épicos</title>
+  <meta name="description" content="Assista vídeos eletrizantes de jogos de luta Tekken. Combates intensos, personagens icônicos e muita ação!" />
+  <meta name="keywords" content="Tekken, jogos de luta, combates, personagens, vídeos de jogos, ação, entretenimento" />
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #1b1b1b;
+      color: #e63946;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      background: linear-gradient(135deg, #1b1b1b, #4a0000);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #e63946;
+      text-shadow: 2px 2px 10px #000;
+      font-size: 3em;
+      user-select: none;
+    }
+
+    #video-container {
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 16 / 9;
+      margin-bottom: 10px;
+      border: 4px solid #e63946;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 30px #e63946;
+      background-color: #000;
+    }
+
+    iframe, video {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    #video-title {
+      max-width: 800px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #f1faee;
+      text-shadow: 1px 1px 4px #e63946;
+      min-height: 2.5em;
+      user-select: none;
+    }
+
+    button {
+      background-color: #e63946;
+      border: none;
+      padding: 14px 30px;
+      color: #1b1b1b;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 15px #e63946;
+      font-family: 'Orbitron', sans-serif;
+      user-select: none;
+    }
+
+    button:hover {
+      background-color: #a72d3a;
+      box-shadow: 0 0 25px #a72d3a;
+    }
+
+    #unique-string {
+      max-width: 90%;
+      background-color: #2b2b2b;
+      border-radius: 12px;
+      padding: 20px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #e63946;
+      user-select: text;
+      margin-top: auto;
+      box-shadow: inset 0 0 10px #a72d3a;
+    }
+
+    #propaganda-piscante {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #e63946;
+      color: #1b1b1b;
+      font-weight: 700;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 16px;
+      cursor: pointer;
+      animation: piscar 1s infinite alternate;
+      box-shadow: 0 0 20px #e63946;
+      z-index: 1000;
+      user-select: none;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    @keyframes piscar {
+      0% {opacity: 1;}
+      100% {opacity: 0.3;}
+    }
+
+    @media (max-width: 600px) {
+      #video-container {
+        max-width: 100%;
+        aspect-ratio: auto;
+        height: 215px;
+      }
+
+      #video-title {
+        font-size: 18px;
+      }
+
+      #propaganda-piscante {
+        font-size: 14px;
+        padding: 8px 12px;
+        top: 10px;
+        right: 10px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <h1>Tekken Battles - Jogos de Luta Épicos</h1>
+
+  <div id="video-container"></div>
+
+  <div id="video-title">Carregando vídeo...</div>
+
+  <button onclick="trocarVideo()">Trocar Vídeo</button>
+
+  <div id="unique-string">Carregando conteúdo exclusivo...</div>
+
+  <div id="propaganda-piscante">OFERTA IMPERDÍVEL!</div>
+<!-------------------------controla video e propaganda-->
+  <script>
+    const videos = [
+      {
+        tipo: "youtube",
+        src: "https://www.youtube.com/embed/Zhn9gAw2l8Y",
+        titulo: "Tekken 3 | Eddy Gordo"
+      },
+       {
+        tipo: "youtube",
+        src: "https://www.youtube.com/embed/X90g7OD0eFw",
+        titulo: "Tekken 4| jogo completo"
+      },
+      {
+        tipo: "youtube",
+        src: "https://www.youtube.com/embed/BvkkDiji5v0",
+        titulo: "Tekken - A história completa do 1 ao 7"
+      },
+
+
+    ];
+
+    const propagandas = [
+      "https://randomico02.vercel.app/",
+      "https://shoppingrandom01.vercel.app/",
+      "https://randomshopping.netlify.app/",
+      "https://vendaschamada.blogspot.com/",
+      "https://randomico02.netlify.app/",
+      "https://carro.wuaze.com/conferir/",
+      "https://arquivos.wuaze.com/conferir/",
+      "https://hostinger.com.br/?REFERRALCODE=1VICTOR444",
+      "https://geocredibnkvitoria.com/",
+      "https://jogosantigos472302513.wordpress.com/",
+      "https://brasilbrasileiross.blogspot.com/",
+      "https://ocomerciobrasileironoticia.blogspot.com/2025/05/erp-profissional-para-empresas.html"
+    ];
+
+    function getRandomVideo() {
+      return videos[Math.floor(Math.random() * videos.length)];
+    }
+
+    function getRandomAdURL() {
+      return propagandas[Math.floor(Math.random() * propagandas.length)];
+    }
+
+    function trocarVideo() {
+      const videoData = getRandomVideo();
+      const container = document.getElementById('video-container');
+      const tituloEl = document.getElementById('video-title');
+
+      let videoHTML = '';
+
+      if (videoData.tipo === 'youtube') {
+        videoHTML = `<iframe 
+                      src="${videoData.src}" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen
+                      title="${videoData.titulo}">
+                    </iframe>`;
+      } else {
+        videoHTML = `<video controls preload="metadata" poster="${videoData.poster || ''}">
+                      <source src="${videoData.src}" type="video/mp4" />
+                      Seu navegador não suporta o elemento de vídeo.
+                    </video>`;
+      }
+
+      container.innerHTML = videoHTML;
+      tituloEl.textContent = videoData.titulo;
+    }
+
+    function gerarStringUnica(tamanho = 300) {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
+      let resultado = '';
+      for(let i = 0; i < tamanho; i++) {
+        resultado += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return resultado;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      trocarVideo(); // carrega o primeiro vídeo aleatório
+      document.getElementById('unique-string').textContent = gerarStringUnica();
+
+      document.getElementById('propaganda-piscante').addEventListener('click', () => {
+        window.open(getRandomAdURL(), '_blank');
+      });
+    });
+  </script>
+<!-------------------------controla video e propaganda-->
+</body>
+</html>
